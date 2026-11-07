@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>World &amp; Markets Brief</title>
+  <meta name="description" content="Filtered world and financial headlines from named sources, refreshed about every 15 minutes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23196a6f'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <h1>World &amp; Markets Brief</h1>
+      <p class="lede">Headlines from named sources, filtered automatically and refreshed about every 15 minutes. Nobody reads each story before it appears, so early reports can change.</p>
+    </div>
+    <p class="status" id="status" role="status">Loading the latest headlines…</p>
+  </header>
+
+  <main>
+    <p class="notice" id="notice" hidden></p>
+    <noscript><p class="notice">This page needs JavaScript to load headlines.</p></noscript>
+
+    <section aria-labelledby="markets-title">
+      <div class="section-head">
+        <h2 id="markets-title">Markets</h2>
+        <p class="caption">Latest official daily figures. Check each date, because they publish on different days.</p>
+      </div>
+      <div class="markets" id="markets"></div>
+    </section>
+
+    <div class="wires">
+      <section aria-labelledby="world-title">
+        <div class="section-head"><h2 id="world-title">World</h2></div>
+        <ol class="stories" id="world"></ol>
+      </section>
+      <section aria-labelledby="finance-title">
+        <div class="section-head"><h2 id="finance-title">Economy and finance</h2></div>
+        <ol class="stories" id="finance"></ol>
+      </section>
+    </div>
+
+    <section aria-labelledby="filter-title" class="about">
+      <div class="section-head"><h2 id="filter-title">How this page is filtered</h2></div>
+      <div class="about-grid">
+        <div>
+          <h3>What gets in</h3>
+          <ul>
+            <li>Only the approved sources listed here.</li>
+            <li>Only links to that source's own website.</li>
+            <li>Recent stories only, with near-identical headlines shown once.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What stays out</h3>
+          <ul>
+            <li>Opinion, sport, entertainment and shopping.</li>
+            <li>Market tips and buy or sell suggestions.</li>
+            <li>Video, podcasts and routine notices.</li>
+          </ul>
+          <p class="caption" id="removed"></p>
+        </div>
+        <div>
+          <h3>Known limits</h3>
+          <ul>
+            <li>Filtering uses keyword and web address rules, so some off-topic or weak stories can get through.</li>
+            <li>Stock indexes such as the S&amp;P 500 are not shown, because republishing their data needs permission.</li>
+            <li>Reuters, AP, BBC, The Guardian and DW are not included. Some other sources may carry AP reports.</li>
+            <li>This page is general information, not financial advice.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="sources-title">Sources</h3>
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Type</th><th scope="col">About</th><th scope="col">Last update</th></tr>
+          </thead>
+          <tbody id="sources"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
