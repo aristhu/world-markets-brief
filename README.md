@@ -5,7 +5,7 @@ A self-updating page of filtered world and financial headlines. About every 15 m
 ## Run it locally
 
 ```bash
-node --test scripts/
+node --test "scripts/*.test.mjs"
 node scripts/build-feed.mjs
 ```
 

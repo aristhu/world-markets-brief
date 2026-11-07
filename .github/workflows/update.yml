@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: node --test scripts/
+      - run: node --test "scripts/*.test.mjs"
       - name: Collect and filter feeds
         run: node scripts/build-feed.mjs
         env:
